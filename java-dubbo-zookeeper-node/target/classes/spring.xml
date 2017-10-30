@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <context:property-placeholder location="application.properties"
+                                  ignore-unresolvable="true"/>
+
+    <!--开启后能读能读环境变量-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
+
+    <context:component-scan
+            base-package="
+            pizer.Service"/>
+
+    <!-- 和本地服务一样实现远程服务 -->
+    <!--<bean id="exampleTestService" class="pizer.Service.Impl.ExampleTestServiceImpl" />-->
+
+    <dubbo:application name="dubbo-pizer-provider"/>
+
+    <dubbo:registry protocol="zookeeper" address="${ZOOKEEPER_SERVER}:2181" transporter="curator"/>
+
+    <dubbo:protocol name="dubbo" port="9999" server="netty"/>
+
+    <dubbo:service interface="pizer.Service.ExampleTestService" ref="exampleTestService"/>
+
+</beans>

@@ -1,0 +1,23 @@
+{
+  "name": "node-zookeeper-java",
+  "version": "1.0.0",
+  "description": "node-zookeeper-java",
+  "main": "app.js",
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "js-to-java": "^2.4.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-cors": "0.0.16",
+    "koa-json": "^2.0.2",
+    "koa-static": "^4.0.1",
+    "log4js": "^1.1.1",
+    "log4js-json-layout": "^1.0.5",
+    "node-zookeeper-dubbo": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0"
+  },
+  "author": "pizer",
+  "license": "ISC"
+}
