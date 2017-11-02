@@ -1,10 +1,11 @@
 
 const nzd = require('node-zookeeper-dubbo');
 const java2js = require('js-to-java');
+const __ZOOKEEPER_SERVER = process.env.ZOOKEEPER_SERVER || 'Zookeeper.Environment';
 
 const opt = {
     application: {name: 'pizer'},
-    register: `127.0.0.1:2181`,
+    register: `${__ZOOKEEPER_SERVER}:2181`,
     dubboVer: '2.5.6',
     root: 'dubbo',
     dependencies: {
