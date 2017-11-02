@@ -2,7 +2,7 @@
 const nzd = require('node-zookeeper-dubbo');
 const java2js = require('js-to-java');
 const __ZOOKEEPER_SERVER = process.env.ZOOKEEPER_SERVER || 'Zookeeper.Environment';
-console.log("__ZOOKEEPER_SERVER ====== ",__ZOOKEEPER_SERVER)
+
 const opt = {
     application: {name: 'pizer'},
     register: `${__ZOOKEEPER_SERVER}:2181`,

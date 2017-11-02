@@ -4,7 +4,7 @@ const responseUtils = require('../common/responseUtils');
 
 module.exports = {
     'POST /api/pizer': async (ctx) => {
-        let response = await pizerDao.pizer.OutString("hahahahhaha");
+        let response = await pizerDao.pizer.OutString(ctx.response.body);
 
         responseUtils.success(ctx.response, response);
     }
