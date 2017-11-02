@@ -71,4 +71,28 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>/usr/pizer/java_app/</outputDirectory>
+                    <classesDirectory>target/classes/</classesDirectory>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.alibaba.dubbo.container.Main</mainClass>
+                            <useUniqueVersions>false</useUniqueVersions>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>/usr/pizer/apache-maven-3.5.2/maven_repository/</classpathPrefix>
+                        </manifest>
+                        <manifestEntries>
+                            <Class-Path>.</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
