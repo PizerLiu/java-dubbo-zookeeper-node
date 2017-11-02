@@ -13,7 +13,16 @@ const opt = {
     }
 }
 
-const Dubbo = new nzd(opt);
+try{
+    const Dubbo = new nzd(opt);
+}catch (err){
+    console.log("err===="+err)
+    if( err.indexOf("Create consumer node failed") != -1  ){
+        //重启node容器
+        child_process.spawn('node', [__dirname+'/timer/xzx.js']);
+    }
+}
+
 
 module.exports = {
     pizer: {
