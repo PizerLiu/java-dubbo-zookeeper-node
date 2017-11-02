@@ -15,7 +15,7 @@
 
 3.volumes目录下存放的需要与docker交互的数据卷（此demo存放maven的conf）
 
-4.pizer_jdzn.sh文件为一键执行脚本
+4.pizer_jdzn.sh文件为一键执行脚本(PS: 仅仅下载该脚本即可构建项目，不需下载其他目录！！！！)
 
 ## 启动须知
 
