@@ -107,7 +107,7 @@
                         </goals>
                         <configuration>
                             <outputDirectory>
-                                /usr/pizer/lib
+                                /usr/pizer/java_lib
                             </outputDirectory>
                         </configuration>
                     </execution>
